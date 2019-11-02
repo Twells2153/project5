@@ -18,23 +18,24 @@ int userArray(){
 
     int SIZE;
     int* myArray = 0;
-    cout << "What array size? " << endl;
-    cin >> SIZE;
+    do{
+        cout << "What array size? " << endl;
+        cin >> SIZE;
+        if (SIZE < 5)
+            cout << "Invalid arrays size. Size must >= 5." << endl;
+        else if (SIZE > 15)
+            cout << "Invalid arrays size. Size must <= 15" << endl;
+    } while ((SIZE < 5) || (SIZE > 15));
+
     myArray = new int[SIZE];
     for(int i = 0; i < SIZE; i++){
-        cout << 2 << " ";
+        cout << (rand() % 200)+10 << " ";
     }
-
+    return *myArray;
 }
 
-void populateArray(int SIZE){
+void displayReverse(int* myArray){
 
-    for(int i = 0; i < SIZE; i++){
-        cout << i << " ";
-    }
-
-}
-
-void displayReverse(){
+    int SIZE;
 
 }
