@@ -5,6 +5,7 @@ using namespace std;
 
 void displayReverse(int arr[], int pos);
 void vertical(int arr[], int pos);
+void reverseElement(int arr[], int pos);
 
 int main(){
 
@@ -20,6 +21,10 @@ int main(){
     cout << endl;
     
     displayReverse(myArray, SIZE);
+    cout << endl;
+    vertical(myArray, 1);
+    cout << endl;
+    reverseElement(myArray, 3);
 
     cout << endl << endl;
     
@@ -59,5 +64,23 @@ void vertial(int arr[], int pos){
     while (i >= 0){
         cout << digitArray[i] << endl;
         i--;
+    }
+}
+
+void reverseElement(int arr[], int pos){
+    while( pos != 3){
+        pos++;
+        vertical(arr, pos);
+    }
+    int number = arr[pos];
+    int digitArray[3];
+    int i = 0;
+    cout << number << " reversed is ";
+    while ( number > 0 ){
+        int digit = number % 10;
+        number /= 10;
+        digitArray[i] = digit;
+        cout << digit;
+        i++;
     }
 }
