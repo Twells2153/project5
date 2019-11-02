@@ -22,25 +22,6 @@ int main(){
     displayReverse(myArray, SIZE);
 
     cout << endl << endl;
-
-    int number;
-    cout << "enter number to split ->";
-    cin >> number;
-    int digitArray[3];
-    int i = 0;
-    while ( number > 0 ){
-        int digit = number % 10;
-        number /= 10;
-        cout << digit << endl;
-        digitArray[i] = digit;
-        i++;
-    }
-    i--;
-    cout << "=====================" << endl;
-    while (i >= 0){
-        cout << digitArray[i] << endl;
-        i--;
-    }
     
     return 0;
 }
@@ -53,5 +34,26 @@ void displayReverse(int arr[], int pos){
         displayReverse(arr, pos);
     }else{
         return;
+    }
+}
+
+void vertial(int arr[], int pos){
+
+    int number = arr[pos];
+    int digitArray[3];
+    int i = 0;
+    while ( number > 0 ){
+        int digit = number % 10;
+        number /= 10;
+        digitArray[i] = digit;
+        i++;
+    }
+
+    i--;
+
+    cout << endl << arr[pos] << " vertically" << endl << endl;
+    while (i >= 0){
+        cout << digitArray[i] << endl;
+        i--;
     }
 }
