@@ -4,7 +4,7 @@
 using namespace std;
 
 void displayReverse(int arr[], int pos);
-
+void vertical(int arr[], int pos);
 
 int main(){
 
@@ -39,6 +39,10 @@ void displayReverse(int arr[], int pos){
 
 void vertial(int arr[], int pos){
 
+    while( pos != 1){
+        pos++;
+        vertical(arr, pos);
+    }
     int number = arr[pos];
     int digitArray[3];
     int i = 0;
