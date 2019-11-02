@@ -21,7 +21,27 @@ int main(){
     
     displayReverse(myArray, SIZE);
 
+    cout << endl << endl;
 
+    int number;
+    cout << "enter number to split ->";
+    cin >> number;
+    int digitArray[3];
+    int i = 0;
+    while ( number > 0 ){
+        int digit = number % 10;
+        number /= 10;
+        cout << digit << endl;
+        digitArray[i] = digit;
+        i++;
+    }
+    i--;
+    cout << "=====================" << endl;
+    while (i >= 0){
+        cout << digitArray[i] << endl;
+        i--;
+    }
+    
     return 0;
 }
 
