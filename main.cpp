@@ -3,7 +3,8 @@
 #include <ctime>
 using namespace std;
 
-// EDIT Made Connor
+void displayReverse(int arr[], int pos);
+
 
 int main(){
 
@@ -13,9 +14,24 @@ int main(){
     cin >> SIZE;
     int myArray[SIZE];
     for (int i = 0; i < SIZE; i++){
-        cout << (rand() % 200)+10 << " ";
+        myArray[i] =(rand() % 200)+10;
+        cout << myArray[i] << " ";
     }
+    cout << endl;
+    
+    displayReverse(myArray, SIZE);
 
 
     return 0;
+}
+
+void displayReverse(int arr[], int pos){
+    
+    if (pos != 0){
+        cout << arr[pos-1] << " ";
+        pos--;
+        displayReverse(arr, pos);
+    }else{
+        return;
+    }
 }
