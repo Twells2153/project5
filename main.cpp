@@ -3,6 +3,8 @@
 #include <ctime>
 using namespace std;
 
+// EDIT Made Connor
+
 int userArray();
 void populateArray(int);
 
