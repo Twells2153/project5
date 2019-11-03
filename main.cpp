@@ -19,7 +19,7 @@ int main(){
     cin >> SIZE;
     int myArray[SIZE];
     for (int i = 0; i < SIZE; i++){
-        myArray[i] = (rand() % 200)+10;
+        myArray[i] = rand() % 191 + 10;
         cout << myArray[i] << " ";
     }
     cout << endl;
