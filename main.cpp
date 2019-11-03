@@ -6,6 +6,7 @@ using namespace std;
 void displayReverse(int arr[], int pos);
 void vertical(int arr[], int pos);
 void reverseElement(int arr[], int pos);
+bool prime(int arr[], int pos);
 
 int main(){
 
@@ -15,24 +16,24 @@ int main(){
     cin >> SIZE;
     int myArray[SIZE];
     for (int i = 0; i < SIZE; i++){
-        myArray[i] =(rand() % 200)+10;
+        myArray[i] = (rand() % 200)+10;
         cout << myArray[i] << " ";
     }
     cout << endl;
-    
+
     displayReverse(myArray, SIZE);
     cout << endl;
     vertical(myArray, 1);
     cout << endl;
     reverseElement(myArray, 3);
+    cout << endl;
+    prime(myArray, 4);
 
-    cout << endl << endl;
-    
     return 0;
 }
 
 void displayReverse(int arr[], int pos){
-    
+
     if (pos != 0){
         cout << arr[pos-1] << " ";
         pos--;
@@ -42,7 +43,7 @@ void displayReverse(int arr[], int pos){
     }
 }
 
-void vertial(int arr[], int pos){
+void vertical(int arr[], int pos){
 
     while( pos != 1){
         pos++;
@@ -83,4 +84,24 @@ void reverseElement(int arr[], int pos){
         cout << digit;
         i++;
     }
+}
+
+bool prime(int arr[], int pos){
+
+    bool isPrime = true;
+    while( pos != 4){
+        pos++;
+        prime(arr, pos);
+    }
+    for (int i = 2; i <= ((arr[pos]) / 2); i++){
+        if(arr[pos] % i == 0){
+            isPrime = false;
+        }
+    }
+    if (isPrime == true)
+        cout << arr[pos] << " is Prime :";
+    else if (isPrime == false)
+        cout << arr[pos] << " is not Prime :";
+
+    return isPrime;
 }
